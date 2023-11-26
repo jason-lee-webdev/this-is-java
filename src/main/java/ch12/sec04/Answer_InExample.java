@@ -1,0 +1,34 @@
+package ch12.sec04;
+
+import java.io.IOException;
+
+public class Answer_InExample {
+    public static void main(String[] args) throws IOException{
+
+        int speed = 0;
+        int keyCode = 0;
+
+        while (true) {
+            if(keyCode != 13 && keyCode != 10) {
+                if(keyCode == 49) {
+                    speed++;
+                } else if (keyCode == 50) {
+                    speed--;
+                } else if (keyCode == 51) {
+                    break;
+                }
+                System.out.println("-------------------------------");
+                System.out.println("1. 증속 | 2. 감속 | 3. 중지");
+                System.out.println("-------------------------------");
+                System.out.println("현재 속도=" + speed);
+                System.out.print("선택: ");
+            }
+
+            keyCode = System.in.read();
+            // 숫자 1 그리고 enter 를 누르면 keyCode 에는 순서대로 48 과 10이 저장된다.
+            // 따라서 숫자 1 그리고 enter 를 누르면 while 문을 두번 돈다.
+        }
+
+        System.out.println("프로그램 종료");
+    }
+}
